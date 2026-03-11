@@ -1,0 +1,1182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="Robot" serializationversion="2">
+  <prologue>
+    <saved-by-versions>
+      <version>10.4.0.0</version>
+    </saved-by-versions>
+    <referenced-types>
+      <type name="InputConfig"/>
+      <type name="Checkin"/>
+      <type name="Employee"/>
+    </referenced-types>
+    <referenced-snippets/>
+    <triggers/>
+    <typed-variables>
+      <typed-variable name="config" type-name="InputConfig"/>
+      <typed-variable name="checkin" type-name="Checkin"/>
+      <typed-variable name="employee" type-name="Employee"/>
+    </typed-variables>
+    <global-variables/>
+    <parameters/>
+    <return-variables/>
+    <store-in-database-variables/>
+    <device-mappings/>
+    <browser-engine>WEBKIT</browser-engine>
+  </prologue>
+  <property name="variables" class="Variables">
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">config</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" class="TypeReference" serializationversion="0">
+          <property name="typeName" class="String">InputConfig</property>
+        </property>
+        <property name="assignments" class="AttributeAssignments">
+          <property name="inputFilePath" class="AttributeAssignment">
+            <property name="attributeValue" class="String">C:\Users\huyhh1\workspace\kofax\cham-cong\Library\Data\Input\Tạo dữ liệu tính lương.xlsx</property>
+            <property name="currentlyAssigned" class="Boolean">true</property>
+            <property name="lastKnownAttributeType" class="java.lang.Class" id="0">kapow.robot.plugin.common.domain.StringAttributeType</property>
+          </property>
+          <property name="outputFilePath" class="AttributeAssignment">
+            <property name="attributeValue" class="String">C:\Users\huyhh1\workspace\kofax\cham-cong\Library\Data\Output\result.xlsx</property>
+            <property name="currentlyAssigned" class="Boolean">true</property>
+            <property name="lastKnownAttributeType" idref="0"/>
+          </property>
+        </property>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String" id="1">excelData</property>
+      <property name="global" class="Boolean">true</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" class="SimpleTypeReference">
+          <property name="simpleTypeId" class="Integer">150</property>
+        </property>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String" id="2">daysInMonth</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" class="SimpleTypeReference" id="3">
+          <property name="simpleTypeId" class="Integer">7</property>
+        </property>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">idxRowFound</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" idref="3"/>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">maNVFound</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" class="SimpleTypeReference" id="4">
+          <property name="simpleTypeId" class="Integer">12</property>
+        </property>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">idxCheckin</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" idref="3"/>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">idxRow</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" idref="3"/>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">targetRowNum</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" idref="3"/>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">date_NgayBatDau</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" class="SimpleTypeReference">
+          <property name="simpleTypeId" class="Integer">3</property>
+        </property>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">checkin</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" class="TypeReference" serializationversion="0">
+          <property name="typeName" class="String">Checkin</property>
+        </property>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">soNgayLamViec</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" idref="3"/>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">employee</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" class="TypeReference" serializationversion="0">
+          <property name="typeName" class="String">Employee</property>
+        </property>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">idxCol</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" idref="3"/>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">targetMonth</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" idref="4"/>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">targetYear</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" idref="4"/>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">targetDate</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" idref="4"/>
+      </property>
+    </object>
+  </property>
+  <property name="proxyServerConfiguration" class="ProxyServerConfiguration" serializationversion="0"/>
+  <property name="httpClientType" class="HttpClientType">
+    <property name="enum-name" class="String">WEBKIT</property>
+  </property>
+  <property name="ntlmAuthentication" class="NTLMAuthenticationType">
+    <property name="enum-name" class="String">STANDARD</property>
+  </property>
+  <property name="usePre96DefaultWaiting" class="Boolean" id="5">false</property>
+  <property name="maxWaitForTimeout" class="Integer">10000</property>
+  <property name="waitRealTime" idref="5"/>
+  <property name="privateHTTPCacheEnabled" class="Boolean" id="6">true</property>
+  <property name="privateHTTPCacheSize" class="Integer">2048</property>
+  <property name="comment">
+    <null/>
+  </property>
+  <property name="executionMode" class="ExecutionMode">
+    <property name="enum-name" class="String">FULL</property>
+  </property>
+  <property name="avoidExternalReExecution" idref="5"/>
+  <property name="transitionGraph" class="Body">
+    <blockBeginStep class="BlockBeginStep" id="7"/>
+    <steps class="ArrayList">
+      <object class="Group" id="8">
+        <name class="String">Init</name>
+        <comment>
+          <null/>
+        </comment>
+        <blockBeginStep class="BlockBeginStep" id="9"/>
+        <steps class="ArrayList">
+          <object class="Transition" serializationversion="3" id="10">
+            <property name="name" class="String">Load File</property>
+            <property name="stepAction" class="LoadFile">
+              <property name="fileNameExpression" class="kapow.robot.plugin.common.support.expression.multipletype.VariableExpression" serializationversion="2">
+                <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+                  <property name="name" class="String">config.inputFilePath</property>
+                </property>
+              </property>
+              <property name="output" class="kapow.robot.plugin.common.stateprocessor.rest.ToVariableOutputSpecification" serializationversion="1">
+                <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+                  <property name="name" class="String">excelData</property>
+                </property>
+              </property>
+              <property name="browserConfigurationSpecification" class="BrowserConfigurationSpecificationWebKit" serializationversion="25">
+                <property name="ancestorProvider" class="BrowserConfigurationSpecificationAncestorProviderForStep"/>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders"/>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="11">
+            <property name="name" class="String">Open Excel Data</property>
+            <property name="stepAction" class="OpenVariable">
+              <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+                <property name="name" class="String">excelData</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders"/>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="12">
+            <property name="name" class="String" id="13">Set Value of Cell</property>
+            <property name="stepAction" class="SetValueOfCell" serializationversion="0"/>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="SpecifiedRangeCellFinderDetail">
+                  <property name="range" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+                    <property name="value" class="String">'Chấm công'!A1:AF4</property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="14">
+            <property name="name" idref="13"/>
+            <property name="stepAction" class="SetValueOfCell" serializationversion="0">
+              <property name="valueExpression" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+                <property name="value" class="String">STT</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="SpecifiedRangeCellFinderDetail">
+                  <property name="range" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+                    <property name="value" class="String">'Chấm công'!A1</property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="15">
+            <property name="name" idref="13"/>
+            <property name="stepAction" class="SetValueOfCell" serializationversion="0">
+              <property name="valueExpression" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+                <property name="value" class="String">Mã NV</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="SpecifiedRangeCellFinderDetail">
+                  <property name="range" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+                    <property name="value" class="String">'Chấm công'!A2</property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="16">
+            <property name="name" class="String">Extract Date Ngay Bat Dau</property>
+            <property name="stepAction" class="ExtractCell">
+              <property name="dataConverters" class="DataConverters">
+                <element class="ExtractDate">
+                  <property name="formats" class="BeanList">
+                    <object class="kapow.robot.plugin.common.stringprocessor.datefetcher.PatternBasedDateFormatSpecification">
+                      <property name="pattern" class="kapow.robot.plugin.common.support.expression.stringexpr.DateExtractorPatternValueStringExpression">
+                        <property name="value" class="String">MM/dd/yy</property>
+                      </property>
+                    </object>
+                  </property>
+                </element>
+              </property>
+              <property name="attributeName" class="kapow.robot.plugin.common.support.AttributeName2">
+                <property name="name" class="String">date_NgayBatDau</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="SpecifiedRangeCellFinderDetail">
+                  <property name="range" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+                    <property name="value" class="String">Checkin!B2</property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="17">
+            <property name="name" class="String" id="18">Convert Variables</property>
+            <property name="stepAction" class="ConvertVariables">
+              <property name="entries" class="kapow.robot.plugin.common.stateprocessor.attributeconverter.AttributeConverterEntries">
+                <object class="kapow.robot.plugin.common.stateprocessor.attributeconverter.AttributeConverterEntry" serializationversion="0">
+                  <property name="fromAttributeName" class="kapow.robot.plugin.common.support.AttributeName">
+                    <property name="name" class="String" id="19">date_NgayBatDau</property>
+                  </property>
+                  <property name="dataConverters" class="DataConverters">
+                    <element class="FormatDate">
+                      <property name="pattern" class="String">MM</property>
+                    </element>
+                  </property>
+                  <property name="toAttributeName" class="kapow.robot.plugin.common.support.AttributeName">
+                    <property name="name" class="String">targetMonth</property>
+                  </property>
+                </object>
+                <object class="kapow.robot.plugin.common.stateprocessor.attributeconverter.AttributeConverterEntry" serializationversion="0">
+                  <property name="fromAttributeName" class="kapow.robot.plugin.common.support.AttributeName">
+                    <property name="name" idref="19"/>
+                  </property>
+                  <property name="dataConverters" class="DataConverters">
+                    <element class="FormatDate">
+                      <property name="pattern" class="String">yyyy</property>
+                    </element>
+                  </property>
+                  <property name="toAttributeName" class="kapow.robot.plugin.common.support.AttributeName">
+                    <property name="name" class="String">targetYear</property>
+                  </property>
+                </object>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders"/>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="20">
+            <property name="name">
+              <null/>
+            </property>
+            <property name="stepAction">
+              <null/>
+            </property>
+            <property name="elementFinders" class="ElementFinders"/>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+        </steps>
+        <blockEndStep class="BlockEndStep" id="21"/>
+        <edges class="ArrayList">
+          <object class="TransitionEdge">
+            <from idref="9"/>
+            <to idref="10"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="10"/>
+            <to idref="11"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="11"/>
+            <to idref="12"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="12"/>
+            <to idref="14"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="14"/>
+            <to idref="15"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="15"/>
+            <to idref="16"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="16"/>
+            <to idref="17"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="17"/>
+            <to idref="20"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="20"/>
+            <to idref="21"/>
+          </object>
+        </edges>
+      </object>
+      <object class="Transition" serializationversion="3" id="22">
+        <property name="name" class="String">Assign Days In Month</property>
+        <property name="stepAction" class="AssignVariable" serializationversion="4">
+          <property name="stringExpr" class="Expression" serializationversion="1">
+            <property name="text" class="String">(targetMonth == 1 || targetMonth == 3 || targetMonth == 5 || targetMonth == 7 || targetMonth == 8 || targetMonth == 10 || targetMonth == 12)
+? 31
+: (
+    (targetMonth == 4 || targetMonth == 6 || targetMonth == 9 || targetMonth == 11)
+    ? 30
+    : (
+        ((targetYear % 400 == 0) || (targetYear % 4 == 0 &amp;&amp; targetYear % 100 != 0))
+        ? 29
+        : 28
+      )
+  )
+</property>
+          </property>
+          <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+            <property name="name" idref="2"/>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="6"/>
+        <property name="changedProperties" class="java.util.HashSet"/>
+      </object>
+      <object class="BranchPoint" id="23"/>
+      <object class="Group" id="24">
+        <name class="String">fill STT</name>
+        <comment>
+          <null/>
+        </comment>
+        <blockBeginStep class="BlockBeginStep" id="25"/>
+        <steps class="ArrayList">
+          <object class="Transition" serializationversion="3" id="26">
+            <property name="name" class="String">Loop Columns</property>
+            <property name="stepAction" class="LoopInExcel">
+              <property name="loopDirection" class="LoopInExcel$LoopDirection" id="27">
+                <property name="enum-name" class="String">COLUMNS</property>
+              </property>
+              <property name="firstIndex" class="Integer">1</property>
+              <property name="rangeName" class="DesiredElementName">
+                <property name="name" class="String">STT</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="SpecifiedRangeCellFinderDetail">
+                  <property name="range" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+                    <property name="value" class="String">'Chấm công'!1</property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="28">
+            <property name="name" class="String" id="29">Get Iteration</property>
+            <property name="stepAction" class="GetIteration">
+              <property name="attributeName" class="kapow.robot.plugin.common.support.AttributeName2">
+                <property name="name" class="String">idxCol</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders"/>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="30">
+            <property name="name" idref="13"/>
+            <property name="stepAction" class="SetValueOfCell" serializationversion="0">
+              <property name="cellValueProvider" class="NumberCellValueProvider"/>
+              <property name="valueExpression" class="kapow.robot.plugin.common.support.expression.multipletype.VariableExpression" serializationversion="2">
+                <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+                  <property name="name" class="String">idxCol</property>
+                </property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="NamedRangeCellFinderDetail">
+                  <property name="rangeName" class="ElementName">
+                    <property name="name" class="String">STT</property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="31">
+            <property name="name" class="String" id="32">Test Value</property>
+            <property name="stepAction" class="TestValue" serializationversion="0">
+              <property name="condition" class="Expression" serializationversion="1">
+                <property name="text" class="String">idxCol &gt;= daysInMonth</property>
+              </property>
+              <property name="mode" class="Integer">1</property>
+            </property>
+            <property name="elementFinders" class="ElementFinders"/>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0">
+              <property name="reportingViaAPI" class="Boolean">false</property>
+              <property name="reportingViaLog" class="Boolean">false</property>
+              <property name="controlFlow" class="kapow.robot.robomaker.robot.ControlFlow$BreakLoop"/>
+            </property>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+        </steps>
+        <blockEndStep class="BlockEndStep" id="33"/>
+        <edges class="ArrayList">
+          <object class="TransitionEdge">
+            <from idref="25"/>
+            <to idref="26"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="26"/>
+            <to idref="28"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="28"/>
+            <to idref="30"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="30"/>
+            <to idref="31"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="31"/>
+            <to idref="33"/>
+          </object>
+        </edges>
+      </object>
+      <object class="End" id="34"/>
+      <object class="Group" id="35">
+        <name class="String">fill ngayLamViec</name>
+        <comment>
+          <null/>
+        </comment>
+        <blockBeginStep class="BlockBeginStep" id="36"/>
+        <steps class="ArrayList">
+          <object class="Transition" serializationversion="3" id="37">
+            <property name="name" class="String">Loop Columns</property>
+            <property name="stepAction" class="LoopInExcel">
+              <property name="loopDirection" idref="27"/>
+              <property name="firstIndex" class="Integer">1</property>
+              <property name="rangeName" class="DesiredElementName">
+                <property name="name" class="String">maNV</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="SpecifiedRangeCellFinderDetail">
+                  <property name="range" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+                    <property name="value" class="String">'Chấm công'!2</property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="38">
+            <property name="name" idref="29"/>
+            <property name="stepAction" class="GetIteration">
+              <property name="attributeName" class="kapow.robot.plugin.common.support.AttributeName2">
+                <property name="name" class="String">idxCol</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders"/>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="39">
+            <property name="name" class="String">Assign Target Date</property>
+            <property name="stepAction" class="AssignVariable" serializationversion="4">
+              <property name="stringExpr" class="Expression" serializationversion="1">
+                <property name="text" class="String">targetMonth + "/" + idxCol + "/" + targetYear</property>
+              </property>
+              <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+                <property name="name" class="String">targetDate</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders"/>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="40">
+            <property name="name" idref="13"/>
+            <property name="stepAction" class="SetValueOfCell" serializationversion="0">
+              <property name="valueExpression" class="kapow.robot.plugin.common.support.expression.multipletype.StringProcessorsExpression" serializationversion="0">
+                <property name="dataConverters" class="DataConverters">
+                  <element class="GetVariable" serializationversion="2">
+                    <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+                      <property name="name" class="String">targetDate</property>
+                    </property>
+                  </element>
+                  <element class="ExtractDate">
+                    <property name="formats" class="BeanList">
+                      <object class="kapow.robot.plugin.common.stringprocessor.datefetcher.PatternBasedDateFormatSpecification">
+                        <property name="pattern" class="kapow.robot.plugin.common.support.expression.stringexpr.DateExtractorPatternValueStringExpression">
+                          <property name="value" class="String">MM/dd/yyyy</property>
+                        </property>
+                      </object>
+                    </property>
+                  </element>
+                  <element class="FormatDate">
+                    <property name="pattern" class="String">MM/dd/yyyy</property>
+                  </element>
+                </property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="NamedRangeCellFinderDetail">
+                  <property name="rangeName" class="ElementName">
+                    <property name="name" class="String">maNV</property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="41">
+            <property name="name" idref="32"/>
+            <property name="stepAction" class="TestValue" serializationversion="0">
+              <property name="condition" class="Expression" serializationversion="1">
+                <property name="text" class="String">idxCol &gt;= daysInMonth</property>
+              </property>
+              <property name="mode" class="Integer">1</property>
+            </property>
+            <property name="elementFinders" class="ElementFinders"/>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0">
+              <property name="reportingViaAPI" class="Boolean">false</property>
+              <property name="reportingViaLog" class="Boolean">false</property>
+              <property name="controlFlow" class="kapow.robot.robomaker.robot.ControlFlow$BreakLoop"/>
+            </property>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+        </steps>
+        <blockEndStep class="BlockEndStep" id="42"/>
+        <edges class="ArrayList">
+          <object class="TransitionEdge">
+            <from idref="36"/>
+            <to idref="37"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="37"/>
+            <to idref="38"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="38"/>
+            <to idref="39"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="39"/>
+            <to idref="40"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="40"/>
+            <to idref="41"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="41"/>
+            <to idref="42"/>
+          </object>
+        </edges>
+      </object>
+      <object class="End" id="43"/>
+      <object class="Group" id="44">
+        <name class="String">fill maNV</name>
+        <comment>
+          <null/>
+        </comment>
+        <blockBeginStep class="BlockBeginStep" id="45"/>
+        <steps class="ArrayList">
+          <object class="Transition" serializationversion="3" id="46">
+            <property name="name" class="String">Loop Rows</property>
+            <property name="stepAction" class="LoopInExcel">
+              <property name="loopDirection" class="LoopInExcel$LoopDirection" id="47">
+                <property name="enum-name" class="String">ROWS</property>
+              </property>
+              <property name="rangeName" class="DesiredElementName">
+                <property name="name" class="String">NV.maNV</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="SpecifiedRangeCellFinderDetail">
+                  <property name="range" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+                    <property name="value" class="String">NV!A2:A6</property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="48">
+            <property name="name" class="String">Extract Ma NV</property>
+            <property name="stepAction" class="ExtractCell">
+              <property name="attributeName" class="kapow.robot.plugin.common.support.AttributeName2">
+                <property name="name" class="String">employee.maNV</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="NamedRangeCellFinderDetail">
+                  <property name="rangeName" class="ElementName">
+                    <property name="name" class="String">NV.maNV</property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="49">
+            <property name="name" idref="29"/>
+            <property name="stepAction" class="GetIteration">
+              <property name="attributeName" class="kapow.robot.plugin.common.support.AttributeName2">
+                <property name="name" class="String">idxRow</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders"/>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="50">
+            <property name="name" idref="13"/>
+            <property name="stepAction" class="SetValueOfCell" serializationversion="0">
+              <property name="valueExpression" class="kapow.robot.plugin.common.support.expression.multipletype.VariableExpression" serializationversion="2">
+                <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+                  <property name="name" class="String">employee.maNV</property>
+                </property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="SpecifiedRangeCellFinderDetail">
+                  <property name="range" class="Expression" serializationversion="1">
+                    <property name="text" class="String">"'Chấm công'!A" + (idxRow + 2)</property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+        </steps>
+        <blockEndStep class="BlockEndStep" id="51"/>
+        <edges class="ArrayList">
+          <object class="TransitionEdge">
+            <from idref="45"/>
+            <to idref="46"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="46"/>
+            <to idref="48"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="48"/>
+            <to idref="49"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="49"/>
+            <to idref="50"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="50"/>
+            <to idref="51"/>
+          </object>
+        </edges>
+      </object>
+      <object class="End" id="52"/>
+      <object class="Group" id="53">
+        <name class="String">fill gioLamViec</name>
+        <comment>
+          <null/>
+        </comment>
+        <blockBeginStep class="BlockBeginStep" id="54"/>
+        <steps class="ArrayList">
+          <object class="Transition" serializationversion="3" id="55">
+            <property name="name" class="String">Loop Rows</property>
+            <property name="stepAction" class="LoopInExcel">
+              <property name="loopDirection" idref="47"/>
+              <property name="rangeName" class="DesiredElementName">
+                <property name="name" class="String">checkinRow</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="SpecifiedRangeCellFinderDetail">
+                  <property name="range" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+                    <property name="value" class="String">Checkin!A2:E35</property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="56">
+            <property name="name" class="String">Extract Ma NV</property>
+            <property name="stepAction" class="ExtractCell">
+              <property name="attributeName" class="kapow.robot.plugin.common.support.AttributeName2">
+                <property name="name" class="String">checkin.maNV</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="NamedRangeCellFinderDetail">
+                  <property name="rangeName" class="ElementName">
+                    <property name="name" class="String">checkinRow</property>
+                  </property>
+                  <property name="usage" class="ColumnFromRange"/>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="57">
+            <property name="name" class="String">Extract Date Ngay Lam Viec</property>
+            <property name="stepAction" class="ExtractCell">
+              <property name="dataConverters" class="DataConverters">
+                <element class="ExtractDate">
+                  <property name="formats" class="BeanList">
+                    <object class="kapow.robot.plugin.common.stringprocessor.datefetcher.PatternBasedDateFormatSpecification">
+                      <property name="pattern" class="kapow.robot.plugin.common.support.expression.stringexpr.DateExtractorPatternValueStringExpression">
+                        <property name="value" class="String">MM/dd/yyy</property>
+                      </property>
+                    </object>
+                  </property>
+                </element>
+              </property>
+              <property name="attributeName" class="kapow.robot.plugin.common.support.AttributeName2">
+                <property name="name" class="String">checkin.date_ngayLamViec</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="NamedRangeCellFinderDetail">
+                  <property name="rangeName" class="ElementName">
+                    <property name="name" class="String">checkinRow</property>
+                  </property>
+                  <property name="usage" class="ColumnFromRange">
+                    <property name="columnId" class="ByIndexExcelColumnId">
+                      <property name="offset" class="kapow.robot.plugin.common.support.expression.integerexpr.ValueIntegerExpression">
+                        <property name="value" class="Integer">1</property>
+                      </property>
+                    </property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="58">
+            <property name="name" class="String">Extract Text Gio Lam Viec</property>
+            <property name="stepAction" class="ExtractCell">
+              <property name="attributeName" class="kapow.robot.plugin.common.support.AttributeName2">
+                <property name="name" class="String">checkin.text_gioLamViec</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="NamedRangeCellFinderDetail">
+                  <property name="rangeName" class="ElementName">
+                    <property name="name" class="String">checkinRow</property>
+                  </property>
+                  <property name="usage" class="ColumnFromRange">
+                    <property name="columnId" class="ByIndexExcelColumnId">
+                      <property name="offset" class="kapow.robot.plugin.common.support.expression.integerexpr.ValueIntegerExpression">
+                        <property name="value" class="Integer">4</property>
+                      </property>
+                    </property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="59">
+            <property name="name" idref="18"/>
+            <property name="stepAction" class="ConvertVariables">
+              <property name="entries" class="kapow.robot.plugin.common.stateprocessor.attributeconverter.AttributeConverterEntries">
+                <object class="kapow.robot.plugin.common.stateprocessor.attributeconverter.AttributeConverterEntry" serializationversion="0">
+                  <property name="fromAttributeName" class="kapow.robot.plugin.common.support.AttributeName">
+                    <property name="name" class="String">checkin.date_ngayLamViec</property>
+                  </property>
+                  <property name="dataConverters" class="DataConverters">
+                    <element class="FormatDate">
+                      <property name="pattern" class="String">dd</property>
+                    </element>
+                  </property>
+                  <property name="toAttributeName" class="kapow.robot.plugin.common.support.AttributeName">
+                    <property name="name" class="String">checkin.dayInMonth</property>
+                  </property>
+                </object>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders"/>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="60">
+            <property name="name" class="String">Set Named Range</property>
+            <property name="stepAction" class="SetNamedRange">
+              <property name="rangeName" class="DesiredElementName">
+                <property name="name" class="String" id="61">TargetMaNVCell</property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="SpecifiedRangeCellFinderDetail">
+                  <property name="range" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+                    <property name="value" class="String">'Chấm công'!A</property>
+                  </property>
+                  <property name="usage" class="MatchingCellFromRange">
+                    <property name="matcher" class="ExcelContentMatcher">
+                      <property name="pattern" class="kapow.robot.plugin.common.support.expression.multipletype.VariableExpression" serializationversion="2">
+                        <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+                          <property name="name" class="String">checkin.maNV</property>
+                        </property>
+                      </property>
+                    </property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+          <object class="Transition" serializationversion="3" id="62">
+            <property name="name" class="String">Set Content of Cell</property>
+            <property name="stepAction" class="SetContentOfCell">
+              <property name="contentExpression" class="kapow.robot.plugin.common.support.expression.multipletype.VariableExpression" serializationversion="2">
+                <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+                  <property name="name" class="String">checkin.text_gioLamViec</property>
+                </property>
+              </property>
+            </property>
+            <property name="elementFinders" class="ElementFinders">
+              <object class="ExcelElementFinder">
+                <property name="detail" class="NamedRangeCellFinderDetail">
+                  <property name="rangeName" class="ElementName">
+                    <property name="name" idref="61"/>
+                  </property>
+                  <property name="usage" class="CellFromRange">
+                    <property name="columnId" class="ByIndexExcelColumnId">
+                      <property name="offset" class="kapow.robot.plugin.common.support.expression.multipletype.VariableExpression" serializationversion="2">
+                        <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+                          <property name="name" class="String">checkin.dayInMonth</property>
+                        </property>
+                      </property>
+                    </property>
+                  </property>
+                </property>
+              </object>
+            </property>
+            <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+            <property name="comment">
+              <null/>
+            </property>
+            <property name="enabled" idref="6"/>
+            <property name="changedProperties" class="java.util.HashSet"/>
+          </object>
+        </steps>
+        <blockEndStep class="BlockEndStep" id="63"/>
+        <edges class="ArrayList">
+          <object class="TransitionEdge">
+            <from idref="54"/>
+            <to idref="55"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="55"/>
+            <to idref="56"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="56"/>
+            <to idref="57"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="57"/>
+            <to idref="58"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="58"/>
+            <to idref="59"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="59"/>
+            <to idref="60"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="60"/>
+            <to idref="62"/>
+          </object>
+          <object class="TransitionEdge">
+            <from idref="62"/>
+            <to idref="63"/>
+          </object>
+        </edges>
+      </object>
+      <object class="End" id="64"/>
+      <object class="Transition" serializationversion="3" id="65">
+        <property name="name" class="String">Write File</property>
+        <property name="stepAction" class="WriteFile" serializationversion="0">
+          <property name="fileNameExpression" class="kapow.robot.plugin.common.support.expression.multipletype.VariableExpression" serializationversion="2">
+            <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+              <property name="name" class="String">config.outputFilePath</property>
+            </property>
+          </property>
+          <property name="fileContentExpression" class="kapow.robot.plugin.common.support.expression.multipletype.VariableExpression" serializationversion="2">
+            <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+              <property name="name" idref="1"/>
+            </property>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="6"/>
+        <property name="changedProperties" class="java.util.HashSet"/>
+      </object>
+      <object class="End" id="66"/>
+    </steps>
+    <blockEndStep class="BlockEndStep"/>
+    <edges class="ArrayList">
+      <object class="TransitionEdge">
+        <from idref="7"/>
+        <to idref="8"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="8"/>
+        <to idref="22"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="22"/>
+        <to idref="23"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="23"/>
+        <to idref="24"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="23"/>
+        <to idref="35"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="23"/>
+        <to idref="44"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="23"/>
+        <to idref="53"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="23"/>
+        <to idref="65"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="24"/>
+        <to idref="34"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="35"/>
+        <to idref="43"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="44"/>
+        <to idref="52"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="53"/>
+        <to idref="64"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="65"/>
+        <to idref="66"/>
+      </object>
+    </edges>
+  </property>
+  <property name="browserConfigurationSpecification" class="BrowserConfigurationSpecificationWebKit" serializationversion="25"/>
+</object>
